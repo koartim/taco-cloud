@@ -26,8 +26,6 @@ public class DesignTacoController {
 
     private final IngredientRepository ingredientRepo;
 
-    private TacoRepository designRepo;
-
     @Autowired
     public DesignTacoController(IngredientRepository ingredientRepo, TacoRepository designRepo) {
         this.ingredientRepo = ingredientRepo;
@@ -54,7 +52,6 @@ public class DesignTacoController {
         for (Type type : types) {
             model.addAttribute(type.toString().toLowerCase(), filterByType(ingredients, type));
         }
-        model.addAttribute("design", new Taco());
         return "design";
     }
     
