@@ -38,7 +38,7 @@ public class DesignTacoController {
         return  new Order();
     }
 
-    @ModelAttribute(name = "taco")
+    @ModelAttribute(name = "design")
     public Taco taco() {
         return  new Taco();
     }
@@ -53,6 +53,7 @@ public class DesignTacoController {
         for (Type type : types) {
             model.addAttribute(type.toString().toLowerCase(), filterByType(ingredients, type));
         }
+        model.addAttribute("design", new Taco());
         return "design";
     }
     
